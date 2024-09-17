@@ -15,7 +15,7 @@ const App: FC = () => {
                 value={naturalValue}
                 onChange={setNaturalValue}
                 mode="natural"
-                label="Natural numbers"
+                label="Natural number"
                 placeholder="1234567890"
                 errorMessage="Please enter natural number"
             />
@@ -23,7 +23,7 @@ const App: FC = () => {
                 value={integerValue}
                 onChange={setIntegerValue}
                 mode="integer"
-                label="Integer numbers"
+                label="Integer number"
                 placeholder="-1234567890"
                 errorMessage="Please enter valid integer"
             />
@@ -31,7 +31,7 @@ const App: FC = () => {
                 value={floatingValue}
                 onChange={setFloatingValue}
                 mode="floating"
-                label="Floating numbers"
+                label="Floating number"
                 placeholder="-123.456789"
                 errorMessage="Please enter valid floating point number"
             />
