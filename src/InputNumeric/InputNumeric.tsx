@@ -27,6 +27,12 @@ export type Props = {
     min?: number;
     /** Select a mode of numeric input */
     mode?: keyof typeof Modes;
+    /** Attach a text label to the input */
+    label?: string;
+    /** Set at a placeholder text for the input */
+    placeholder?: string;
+    /** Provide an error hint for the user*/
+    errorMessage?: string;
 };
 
 const patternMapping = {
@@ -43,6 +49,9 @@ export const InputNumeric: FC<Props> = ({
     min = -Infinity,
     onChange = () => {},
     mode = Modes.scientific,
+    label = 'Numeric input',
+                                            placeholder,
+                                            errorMessage = 'error!',
 }) => {
     const id = useId();
     const handleKeyDown = useCallback(
@@ -73,7 +82,7 @@ export const InputNumeric: FC<Props> = ({
     return (
         <fieldset className="w-96">
             <label htmlFor={id} className="mb-2 flex cursor-pointer items-center text-sm font-medium text-gray-600">
-                Numeric input
+                {label}
             </label>
             <input
                 inputMode="decimal"
@@ -85,11 +94,11 @@ export const InputNumeric: FC<Props> = ({
                 type="text"
                 id={id}
                 className="peer block w-48 rounded-full border-2 border-gray-300 bg-transparent px-4 py-2 text-right text-sm font-normal tabular-nums text-gray-900 placeholder:text-gray-400 invalid:border-red-600 focus:border-blue-300 focus:bg-white focus:outline-none focus:outline-0"
-                placeholder="-1.23e56"
+                placeholder={placeholder}
                 aria-describedby={`${id}-helper-text`}
             />
             <div className="invisible mt-2 text-xs text-red-600 peer-[:invalid]:visible" id={`${id}-helper-text`}>
-                Please provide valid decimal number
+                {errorMessage}
             </div>
         </fieldset>
     );
