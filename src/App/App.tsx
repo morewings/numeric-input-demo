@@ -1,7 +1,7 @@
 import type {FC} from 'react';
 import {useState} from 'react';
 
-import {InputNumeric} from '@/lib';
+import {InputNumeric} from '@/InputNumeric';
 import './index.css';
 
 const App: FC = () => {

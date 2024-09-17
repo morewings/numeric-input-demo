@@ -1,7 +1,6 @@
-:root {
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-    text-rendering: optimizelegibility;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
     align-items: center;
