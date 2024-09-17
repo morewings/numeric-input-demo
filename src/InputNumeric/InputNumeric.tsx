@@ -50,8 +50,8 @@ export const InputNumeric: FC<Props> = ({
     onChange = () => {},
     mode = Modes.scientific,
     label = 'Numeric input',
-                                            placeholder,
-                                            errorMessage = 'error!',
+    placeholder,
+    errorMessage = 'error!',
 }) => {
     const id = useId();
     const handleKeyDown = useCallback(
@@ -80,7 +80,7 @@ export const InputNumeric: FC<Props> = ({
     );
     const pattern = patternMapping[mode];
     return (
-        <fieldset className="w-96">
+        <fieldset className="w-72">
             <label htmlFor={id} className="mb-2 flex cursor-pointer items-center text-sm font-medium text-gray-600">
                 {label}
             </label>
@@ -93,7 +93,7 @@ export const InputNumeric: FC<Props> = ({
                 value={value !== undefined ? value : ''}
                 type="text"
                 id={id}
-                className="peer block w-48 rounded-full border-2 border-gray-300 bg-transparent px-4 py-2 text-right text-sm font-normal tabular-nums text-gray-900 placeholder:text-gray-400 invalid:border-red-600 focus:border-blue-300 focus:bg-white focus:outline-none focus:outline-0"
+                className="peer block w-48 rounded-full border-2 border-gray-300 bg-transparent px-4 py-2 text-right text-sm font-normal tabular-nums text-gray-900 placeholder:text-gray-400 invalid:border-red-600 focus:bg-white focus:outline-none focus:outline-0 focus:[&:not(:invalid)]:border-blue-300"
                 placeholder={placeholder}
                 aria-describedby={`${id}-helper-text`}
             />
