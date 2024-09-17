@@ -10,7 +10,7 @@ const App: FC = () => {
     const [floatingValue, setFloatingValue] = useState<string | undefined>();
     const [scientificValue, setScientificValue] = useState<string | undefined>();
     return (
-        <div>
+        <div className="flex flex-col gap-3">
             <InputNumeric
                 value={naturalValue}
                 onChange={setNaturalValue}
